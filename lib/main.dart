@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modul_besh/Page/AnimationPage/animationPage1.dart';
+import 'package:flutter_modul_besh/Page/DarsTort_DotorPage/Doctor_page_view.dart';
 import 'package:flutter_modul_besh/Page/MyWallet/LoginPage.dart';
 import 'package:flutter_modul_besh/Page/UyIshi/DarsUch/AppleShopUI.dart';
 import 'package:flutter_modul_besh/Page/UyIshi/DarsUch/TrashPage.dart';
@@ -9,12 +10,10 @@ import 'package:flutter_modul_besh/Page/UyIshi/RecruiteClimbHeigher/ClimbHeigher
 import 'package:flutter_modul_besh/Page/UyIshi/RecruiteClimbHeigher/Climbheigher2.dart';
 import 'package:flutter_modul_besh/Page/UyIshi/RegisterHomework/loginPage.dart';
 import 'package:flutter_modul_besh/Utils/routes/RoutePage.dart';
-
 import 'Page/AnimationPage/animationPage2.dart';
 import 'Page/HomePage/homePage.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -42,6 +41,7 @@ class MyApp extends StatelessWidget {
         RoutePage.registerPage.routeName: (context) => const LoginPageHome(),
         RoutePage.appleShopUI.routeName: (context) => const AppleShopUI(),
         RoutePage.trashPage.routeName: (context) => const TrashPage(),
+        RoutePage.doctorPage.routeName: (context) => const DoctorListView(),
       },
       initialRoute: RoutePage.homePage.routeName,
     );

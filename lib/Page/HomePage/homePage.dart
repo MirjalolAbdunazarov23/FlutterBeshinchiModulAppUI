@@ -13,57 +13,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future<bool> _ShowOurDialog() async {
-    return await ShowOurDialog<bool>(
-            context: context,
-            barrierDismissable: true,
-            builder: (context) => AlertDialog(
-                  title: Text('hello'),
-                  content: Text('chiqish'),
-                  actions: [
-                    TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(true);
-                        },
-                        child: Text('ha')),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pop(false);
-                        },
-                        child: Text('yo'))
-                  ],
-                )) ??
-        false;
-  }
-
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        return _ShowOurDialog();
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('HomePage'),
-          centerTitle: true,
-          backgroundColor: Colors.amber[400],
-          elevation: 0,
-        ),
-        backgroundColor: Colors.amber.shade100,
-        body: ListView(scrollDirection: Axis.vertical, children: [
-          SafeArea(
-            child: Column(
-              children: [
-                homePageMenu(context, '/animPage1', 'Animation'),
-                homePageMenu(context, '/climbHeigher', 'ClimbHeigher'),
-                homePageMenu(context, '/loginPage', 'LoginPage'),
-                homePageMenu(context, '/registerlogin', 'Login Page Home'),
-                homePageMenu(context, '/appleshopui', 'Apple Shop UI'),
-              ],
-            ),
-          ),
-        ]),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('HomePage'),
+        centerTitle: true,
+        backgroundColor: Colors.amber[400],
+        elevation: 0,
       ),
+      backgroundColor: Colors.amber.shade100,
+      body: ListView(scrollDirection: Axis.vertical, children: [
+        SafeArea(
+          child: Column(
+            children: [
+              homePageMenu(context, '/animPage1', 'Animation'),
+              homePageMenu(context, '/climbHeigher', 'ClimbHeigher'),
+              homePageMenu(context, '/loginPage', 'LoginPage'),
+              homePageMenu(context, '/registerlogin', 'Login Page Home'),
+              homePageMenu(context, '/appleshopui', 'Apple Shop UI'),
+              homePageMenu(context, '/doctorpage', 'Doctor Page'),
+            ],
+          ),
+        ),
+      ]),
     );
   }
 }

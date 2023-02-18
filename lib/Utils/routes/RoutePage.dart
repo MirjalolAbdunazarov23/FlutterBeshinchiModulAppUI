@@ -9,7 +9,9 @@ enum RoutePage {
   walletPage('/loginPage'),
   registerPage('/registerlogin'),
   appleShopUI('/appleshopui'),
-  trashPage('/trashpage');
+  trashPage('/trashpage'),
+  doctorPage('/doctorpage');
+  
   final String routeName;
   const RoutePage(this.routeName);
 }
